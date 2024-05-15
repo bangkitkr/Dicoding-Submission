@@ -19,7 +19,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding: 7rem;
+  scroll-padding: 8rem;
 }
 body {
   font-family: Oswald, sans-serif;
@@ -44,14 +44,15 @@ body {
 
 /* ===== Header Section Start ===== */
 header {
-  position: relative;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 7%;
+  padding: 1rem 10%;
   transition: 0.5s;
   z-index: 10;
+  background: rgba(255, 255, 255, 0.3);
 }
 header .logo a {
   font-size: 2.5rem;
@@ -144,8 +145,291 @@ header .nav-extras .menu-btn {
   font-weight: 500;
   color: var(--black-1);
   background: var(--pink-2);
+  border: 1px solid var(--white-1);
+}
+.hero .container .cta:hover {
+  color: var(--black-1);
+  background: var(--pink-3);
 }
 /* ===== Hero Section End ===== */
 
-/* ===== ??? Section Start ===== */
-/* ===== ??? Section End ===== */
+/* ===== Services Section Start ===== */
+#services {
+  background: var(--white-1);
+  margin: 2rem 0;
+}
+.services h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+.services h1 span {
+  color: var(--pink-4);
+}
+.about-us .container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3rem;
+  margin: 3rem;
+}
+.about-us .videotron {
+  flex: 1 1 40rem;
+}
+.about-us .videotron video {
+  width: 100%;
+}
+.about-us .content {
+  flex: 1 1 40rem;
+}
+.about-us .content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about-us .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: justify;
+}
+.our-services {
+  background: var(--white-2);
+}
+.our-services .container {
+  padding: 2rem;
+}
+.our-services .card-rows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+.our-services .card-rows .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 240px;
+  gap: 2rem;
+  padding: 2rem;
+  background: var(--white-1);
+}
+.our-services .card-rows .card:hover {
+  border: rgba(51, 52, 58, 1) 0.2rem solid;
+}
+.our-services .card-rows .card i {
+  font-size: 3rem;
+}
+.our-services .card-rows .card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 2rem 0 0;
+}
+.our-services .card-rows .card span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 2rem 0 0;
+}
+/* ===== Services Section End ====
+
+/* ===== Products Section Start ===== */
+#products {
+  min-height: 100vh;
+}
+/* ===== Products Section End ===== */
+
+/* ===== Contacts Section Start ===== */
+#contacts {
+  min-height: 100vh;
+  background: var(--white-2);
+}
+/* ===== Contacts Section End ===== */
+
+/* ===== Footer Section ===== */
+footer {
+  background: var(--pink-3);
+}
+footer .content {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+footer .sosmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer .sosmed a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--white-1);
+}
+footer .sosmed a i {
+  font-size: 2rem;
+  color: var(--black-1);
+  opacity: 0.9;
+}
+footer .sosmed a:nth-child(1):hover,
+footer .sosmed a:nth-child(1):hover i {
+  color: #fff;
+  background: rgba(24, 119, 242, 1);
+  transition: all 0.3s ease-out;
+  filter: blur();
+}
+footer .sosmed a:nth-child(2):hover,
+footer .sosmed a:nth-child(2):hover i {
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  transition: all 0.3s ease-out;
+  filter: blur();
+}
+footer .sosmed a:nth-child(3):hover,
+footer .sosmed a:nth-child(3):hover i {
+  color: #fff;
+  background: rgba(20, 23, 26, 1);
+  transition: all 0.3s ease-out;
+  filter: blur();
+}
+footer .sosmed a:nth-child(4):hover,
+footer .sosmed a:nth-child(4):hover i {
+  color: #fff;
+  background: #333;
+  transition: all 0.3s ease-out;
+  filter: blur();
+}
+footer .sosmed a:nth-child(5):hover,
+footer .sosmed a:nth-child(5):hover i {
+  color: #fff;
+  background: rgba(255, 0, 0, 1);
+  transition: all 0.3s ease-out;
+  filter: blur();
+}
+footer .nav-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  gap: 2rem;
+  margin: 30px;
+}
+footer .nav-lists li {
+  list-style: none;
+}
+footer .nav-lists li a {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--black);
+  transition: 0.3s ease;
+}
+footer .nav-lists li a:hover {
+  color: var(--white-1);
+}
+footer .copy-r {
+  background: var(--pink-4);
+  padding: 20px;
+  text-align: center;
+}
+footer .copy-r p {
+  color: var(--black);
+  font-size: 1.1rem;
+}
+footer .copy-r span {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0 5px;
+}
+/* Responsive */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+/* Tablet */
+@media (max-width: 870px) {
+  html {
+    font-size: 85.5%;
+  }
+  /* ===== Header Responsive ===== */
+  header .nav-extras .menu-btn {
+    display: block;
+  }
+  header .nav-lists {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    top: 7rem;
+    right: 3rem;
+    width: 300px;
+    height: 0;
+    background: rgba(254, 227, 236, 0.75);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    z-index: 0;
+  }
+  header .nav-lists.active {
+    height: 240px;
+    padding: 10rem 1rem;
+  }
+  header .nav-lists li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .nav-lists .login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  /* ===== Our Services Responsive ===== */
+  .about .wrapper {
+    flex-flow: row wrap;
+  }
+  /* ===== Contacts Responsive ===== */
+  .contact-box .contact-left .maps {
+    width: 100%;
+    height: 350px;
+  }
+  .contact-box .contact-right::before {
+    content: "";
+    width: 80%;
+    height: 1px;
+    top: 0;
+    right: 10%;
+  }
+  /* ===== My Profiles Responsive ===== */
+  .profiles .card {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 500px) {
+  html {
+    font-size: 75%;
+  }
+  /* ===== Header Responsive ===== */
+  .nav-lists {
+    left: 2rem;
+    width: unset;
+  }
+  /* ===== Products Responsive */
+  .product .product-slider {
+    margin: 0;
+  }
+}
