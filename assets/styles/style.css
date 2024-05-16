@@ -49,10 +49,14 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 10%;
+  padding: 1.5rem 10%;
   transition: 0.5s;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.3);
+}
+header.sticky {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0.1rem 5px 5px rgba(255, 255, 255, 0.3);
+  padding: 1rem 10%;
 }
 header .logo a {
   font-size: 2.5rem;
@@ -61,6 +65,9 @@ header .logo a {
   transition: 0.3s;
 }
 header .logo a:hover {
+  color: var(--pink-4);
+}
+header.sticky .logo a:hover {
   color: var(--pink-4);
 }
 header nav {
@@ -74,15 +81,29 @@ header nav {
   font-size: 1.5rem;
   color: var(--black-1);
 }
+.nav-lists li.active a {
+  color: var(--pink-4);
+  text-shadow: 3px 3px 5px var(--pink-2);
+}
 .nav-lists li a:hover {
-  color: var(--pink-3);
-  text-shadow: 3px 3px 3px rgba(254, 227, 236, 0.75);
+  color: var(--white-1);
+  text-shadow: 3px 3px 5px var(--black-1);
 }
 .nav-lists li a:active {
   color: var(--pink-4);
-  text-shadow: 3px 3px 3px rgba(254, 227, 236, 0.75);
+  text-shadow: 3px 3px 5px var(--pink-2);
+}
+header.sticky .nav-lists li a:hover {
+  color: var(--pink-3);
+  text-shadow: 3px 3px 5px var(--white-1);
+}
+header.sticky .nav-lists li a:active {
+  color: var(--pink-4);
 }
 .nav-lists .login {
+  display: none;
+}
+header .login {
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 20px;
@@ -90,21 +111,40 @@ header nav {
   color: var(--white-1);
   transition: 0.3s;
 }
-.nav-lists .login:hover {
+header .login:hover {
   scale: 1.05;
   color: var(--black-1);
+  background: var(--white-1);
+}
+header .login:active {
+  scale: 0.95;
+  background: var(--pink-4);
+}
+header.sticky .login:hover {
+  scale: 1.05;
+  color: var(--white-1);
   background: var(--pink-3);
 }
-.nav-lists .login:active {
+header.sticky .login:active {
   scale: 0.95;
   background: var(--pink-4);
 }
 .nav-extras li {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+}
+.nav-extras li:hover i {
+  color: var(--white-1);
+  text-shadow: 3px 3px 3px rgba(1, 1, 1, 1);
+}
+header.sticky .nav-extras li:hover i {
+  color: var(--pink-4);
+  text-shadow: 3px 3px 3px rgba(1, 1, 1, 1);
 }
 .nav-extras li i {
   font-size: 2rem;
+  transition: 0.5s;
 }
 header .nav-extras .menu-btn {
   display: none;
@@ -233,7 +273,101 @@ header .nav-extras .menu-btn {
 
 /* ===== Products Section Start ===== */
 #products {
-  min-height: 100vh;
+  background: var(--white-1);
+  margin-top: 2rem;
+  /* min-height: 100vh; */
+}
+.products .container {
+  padding: 2rem 7%;
+}
+.products h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.products h1 span {
+  color: var(--pink-3);
+}
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 4% 5rem;
+}
+.product .product-slider {
+  margin: 0 5rem;
+  overflow: hidden;
+}
+.product-slider .card-rows {
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+.product-slider .card-rows .card {
+  background: var(--white-1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product-slider .card-rows #all-product {
+  display: flex;
+  margin: auto;
+  width: 0;
+  color: var(--black-1);
+}
+.product-slider .card-rows #all-product a {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--black-1);
+}
+.product-slider .card-rows .card .img-box {
+  height: 300px;
+  border-radius: 8px 8px 0 0;
+}
+.product-slider .card-rows .card .img-box img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  border-radius: 8px 8px 0 0;
+}
+.product-slider .card-rows .card .info-box {
+  padding: 1rem 1rem 1rem 1rem;
+}
+.product-slider .card-rows .card .info-box h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.product-slider .card-rows .card .info-box h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product-slider .card-rows .card .btn-box {
+  display: flex;
+  gap: 0.2rem;
+}
+.product-slider .card-rows .card .btn-box button {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product-slider .card-rows .card .btn-box button.buy {
+  flex: 1 1 10rem;
+}
+.product-slider .card-rows .card .btn-box button.cart {
+  flex: 1 1 1rem;
+}
+.product-slider .swiper-nav .arrow-btn {
+  color: var(--black);
+  padding: 1.5rem;
+  background: var(--pink-2);
+  border: none;
+  border-radius: 50%;
+}
+.product-slider .swiper-nav .arrow-btn::before,
+.product-slider .swiper-nav .arrow-btn::after {
+  font-size: 18px;
+}
+.product-slider .swiper-nav .swiper-pagination-bullet-active {
+  background: var(--pink-4);
 }
 /* ===== Products Section End ===== */
 
@@ -328,7 +462,7 @@ footer .nav-lists li {
 footer .nav-lists li a {
   font-size: 1.3rem;
   text-decoration: none;
-  color: var(--black);
+  color: var(--black-1);
   transition: 0.3s ease;
 }
 footer .nav-lists li a:hover {
@@ -340,7 +474,7 @@ footer .copy-r {
   text-align: center;
 }
 footer .copy-r p {
-  color: var(--black);
+  color: var(--black-1);
   font-size: 1.1rem;
 }
 footer .copy-r span {
@@ -362,28 +496,26 @@ footer .copy-r span {
     font-size: 85.5%;
   }
   /* ===== Header Responsive ===== */
-  header .nav-extras .menu-btn {
-    display: block;
-  }
   header .nav-lists {
-    position: absolute;
     display: flex;
+    position: absolute;
     flex-direction: column;
     gap: 0.1rem;
     top: 7rem;
     right: 3rem;
     width: 300px;
     height: 0;
-    background: rgba(254, 227, 236, 0.75);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
     overflow: hidden;
     transition: 0.3s;
     z-index: 0;
   }
-  header .nav-lists.active {
+  header .nav-lists.open {
     height: 240px;
     padding: 10rem 1rem;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.4);
   }
   header .nav-lists li {
     padding: 0.7rem;
@@ -396,35 +528,21 @@ footer .copy-r span {
     display: flex;
     justify-content: center;
   }
-  /* ===== Our Services Responsive ===== */
-  .about .wrapper {
-    flex-flow: row wrap;
+  header .nav-extras .menu-btn {
+    display: block;
   }
-  /* ===== Contacts Responsive ===== */
-  .contact-box .contact-left .maps {
-    width: 100%;
-    height: 350px;
-  }
-  .contact-box .contact-right::before {
-    content: "";
-    width: 80%;
-    height: 1px;
-    top: 0;
-    right: 10%;
-  }
-  /* ===== My Profiles Responsive ===== */
-  .profiles .card {
-    flex-wrap: wrap;
+  header .nav-extras .login {
+    display: none;
   }
 }
 
 /* Mobile Phone */
-@media (max-width: 500px) {
+@media (max-width: 490px) {
   html {
     font-size: 75%;
   }
   /* ===== Header Responsive ===== */
-  .nav-lists {
+  header .nav-lists {
     left: 2rem;
     width: unset;
   }
