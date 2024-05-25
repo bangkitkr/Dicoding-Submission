@@ -7,47 +7,48 @@
 
     <!-- ===== Style Links ===== -->
     <!-- My Assets -->
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <title>FlowerShop.com</title>
+    <title>Coffeeku.com</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="">Logo</a>
+            <a href="">CoffeeKu</a>
         </div>
         <nav class="nav-lists">
-            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#home" class="active">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
+            <li><a href="#shops">Products</a></li>
             <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#profiles">About Me</a></li>
             <button type="submit" class="btn login">Login</button>
         </nav>
         <nav class="nav-extras">
             <li class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></li>
-            <li class="menu-btn"><i class="fa-solid fa-bars"></i></li>
+            <li class="menu-btn"><i class="burger-menu"></i></li>
             <button type="submit" class="btn login">Login</button>
         </nav>
     </header>
     <main>
         <div class="landing-pages">
             <!-- ===== Hero Section Start ===== -->
-            <article class="hero" id="home">
+            <article class="article hero" id="home">
                 <div class="container">
-                    <h1>Selamat Datang <span>di FlowerShop</span></h1>
+                    <h1>Selamat Datang <span>di Coffee ID</span></h1>
                     <p>Temukan koleksi bunga indah kami untuk segala kesempatan!</p>
-                    <a href="#" class="btn cta">Jelajahi Koleksi Kami</a>
+                    <a href="#" class="btn cta">Jelajahi Menu Kami</a>
                 </div>
             </article>
             <!-- ===== Hero Section End ===== -->
             <!-- ===== Services Section Start ===== -->
-            <article class="services" id="services">
+            <article class="article services" id="services">
                 <h1>Layanan <span>Kami</span></h1>
                 <section class="about-us">
                     <div class="container">
@@ -57,13 +58,15 @@
                         <div class="content">
                             <h2>Kenapa Pilih Kami</h2>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ipsam nisi
-                                cupiditate minus repellat sint eligendi? Inventore optio neque assumenda?
+                                Kami bangga dengan kualitas kopi kami yang terbaik. Setiap cangkir kopi kami disajikan
+                                dengan cinta
+                                dan perhatian, menggunakan biji kopi pilihan dari petani-petani terbaik.
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fuga, deserunt nisi,
-                                voluptatibus quaerat dolorum porro odit inventore iure ipsum tempora laborum sunt
-                                cupiditate unde nemo mollitia voluptatem cum nostrum.
+                                Dari kopi yang kuat hingga yang lembut, kami memiliki pilihan untuk semua selera. Dengan
+                                pelayanan
+                                ramah dan suasana yang menyenangkan, kami siap memberikan pengalaman kopi yang tak
+                                terlupakan.
                             </p>
                         </div>
                     </div>
@@ -73,161 +76,272 @@
                         <div class="card-rows">
                             <!-- Card 1 -->
                             <div class="card">
-                                <i class="fa-solid fa-truck"></i>
-                                <div class="content">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-truck"></i>
+                                </div>
+                                <div class="content-box">
                                     <h2>Gratis Ongkir</h2>
-                                    <span>Semua Pemesanan</span>
+                                    <span>Pengiriman kopi gratis tanpa biaya tambahan.</span>
                                 </div>
                             </div>
                             <!-- Card 2 -->
                             <div class="card">
-                                <i class="fa-solid fa-dollar"></i>
-                                <div class="content">
-                                    <h2>10 Hari Pengembalian</h2>
-                                    <span>Dijamin Uang Kembali</span>
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-dollar"></i>
+                                </div>
+                                <div class="content-box">
+                                    <h2>Harga Terjangkau</h2>
+                                    <span>Kopi premium dengan harga kompetitif.</span>
                                 </div>
                             </div>
                             <!-- Card 3 -->
                             <div class="card">
-                                <i class="fa-solid fa-seedling"></i>
-                                <div class="content">
-                                    <h2>Konsultasi</h2>
-                                    <span>Kami siap untuk membantu untuk masalah anda</span>
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </div>
+                                <div class="content-box">
+                                    <h2>Ragam Pilihan</h2>
+                                    <span>Beragam jenis dan campuran kopi tersedia.</span>
                                 </div>
                             </div>
                             <!-- Card 4 -->
                             <div class="card">
-                                <i class="fa-solid fa-clipboard-check"></i>
-                                <div class="content">
-                                    <h2>Pesanan Khusus</h2>
-                                    <span>Kami Menerima Kustomisasi Bucket dan Pot</span>
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                </div>
+                                <div class="content-box">
+                                    <h2>Kualitas Terbaik</h2>
+                                    <span>Jaminan kualitas tertinggi untuk setiap cangkir.</span>
                                 </div>
                             </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+            <!-- ===== Services Section End ===== -->
+            <!-- ===== Products Section Start ===== -->
+            <article class="article shops" id="shops">
+                <div class="heading">
+                    <h1><span>Produk</span> Terbaru</h1>
+                    <p>Mari Lihat Produk Terbaru Kami</p>
+                </div>
+                <section class="menu-product swiper">
+                    <div class="menu-slider">
+                        <div class="card-rows swiper-wrapper">
+                            <!-- Card 1 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/GayoCoffee.png" alt="GayoCoffee.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Aceh Gayo</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/CapuchinoCoffee.png" alt="Capuchino.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Capuchino</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/MarocchinoLatte.png" alt="MarocchinoLatte.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Marocchino Latte</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/LatteTeaCubanEsspresso.png"
+                                        alt="LatteTeaEsspresso.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Latte Tea Esspresso</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/BlackCoffee.png" alt="BlackCoffee.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Kopi Hitam</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div class="card swiper-slide">
+                                <div class="photos-box">
+                                    <img src="assets/images/product/MilkCoffeeLatte.png" alt="MilkCoffeeLatte.png">
+                                </div>
+                                <div class="info-box">
+                                    <h2>Kopi Susu Latte</h2>
+                                    <p>
+                                        Nikmati cita rasa halus dan aroma khas dari Kopi kami. Setiap
+                                        cangkir menawarkan kelezatan yang sempurna untuk pecinta kopi sejati.
+                                    </p>
+                                </div>
+                                <div class="checkout-box">
+                                    <span class="price">Rp. 12.000</span>
+                                    <button class="btn"><i class="fa-solid fa-cart-plus"></i>Beli</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-nav">
+                            <button class="swiper-button-next arrow-btn"></button>
+                            <button class="swiper-button-prev arrow-btn"></button>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </section>
             </article>
-            <!-- ===== Services Section End ===== -->
-            <!-- ===== Products Section Start ===== -->
-            <article class="products" id="products">
-                <div class="container">
-                    <h1><span>Produk</span> Terbaru</h1>
-                    <section class="product swiper">
-                        <div class="product-slider">
-                            <div class="card-rows swiper-wrapper">
-                                <!-- Card 1 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/AloeVera.jpeg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Lidah Buaya</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Card 2 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/Cactus.jpg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Kaktus</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Card 3 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/CallaLily.jpg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Calla Lily</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Card 4 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/Monstera.jpg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Monstera</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Card 5 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/SunFlower.jpeg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Bunga Matahari</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                                <!-- Card 6 -->
-                                <div class="card swiper-slide">
-                                    <div class="img-box">
-                                        <img src="assets/images/product/TulipsFlower.jpg" alt="">
-                                    </div>
-                                    <div class="info-box">
-                                        <h2>Bunga Tulip</h2>
-                                        <h3>Rp.xxx.xxx</h3>
-                                    </div>
-                                    <div class="btn-box">
-                                        <button class="btn buy">Beli Sekarang</button>
-                                        <button class="btn cart"><i class="fa-solid fa-cart-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-nav">
-                                <button class="swiper-button-next arrow-btn"></button>
-                                <button class="swiper-button-prev arrow-btn"></button>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </article>
             <!-- ===== Products Section End ===== -->
             <!-- ===== Contacts Section start ===== -->
-            <article class="contacts" id="contacts"></article>
+            <article class="article contacts" id="contacts">
+                <div class="wrapper">
+                    <h1>Kontak <span>Kami</span></h1>
+                    <div class="contact-box">
+                        <div class="contact-left">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.0779985673352!2d106.93142911435459!3d-6.222116477406833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d7f5d0e216f%3A0x8e4341d70e8e6ed2!2sPasar%20Perumnas%20Klender!5e0!3m2!1sid!2sid!4v1676542406491!5m2!1sid!2sid"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                class="maps">
+                            </iframe>
+                        </div>
+                        <div class="contact-right">
+                            <!-- Contact Item 1 -->
+                            <div class="items">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-map"></i>
+                                </div>
+                                <div class="info-box">
+                                    <h2>Alamat</h2>
+                                    <p>13250 Jl. TB Badaruddin, Klender, DKI Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+                            <!-- Contact Item 2 -->
+                            <div class="items">
+                                <div class="icon-box">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="info-box">
+                                    <h2>E-mail</h2>
+                                    <p>flower-shop@gmail.com</p>
+                                </div>
+                            </div>
+                            <!-- Contact Item 3 -->
+                            <div class="items">
+                                <div class="icon-box">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="info-box">
+                                    <h2>Phone/Whatsapp</h2>
+                                    <p>0812987654321</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
             <!-- ===== Contacts Section End ===== -->
         </div>
-        <aside></aside>
+        <aside class="article profiles" id="profiles">
+            <div class="wrapper">
+                <section class="heading">
+                    <h1><span>Tentang</span> Saya</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, perspiciatis?
+                    </p>
+                </section>
+                <section class="bio-box">
+                    <div class="photos">
+                        <img src="assets/images/profiles/profile.png" alt="Profile.png">
+                    </div>
+                    <div class="info-box">
+                        <h3 class="name">Bangkit Kharisma Raja</h3>
+                        <p class="jobs">Front-End Developer | AI Engineer</p>
+                        <p class="motto">
+                            Saya tinggal di DKI Jakarta, saya lulusan S1 di Universitas Bina Sarana Informatika Jurusan
+                            Teknologi Informasi
+                        </p>
+                        <div class="sosmed">
+                            <a href="https://www.facebook.com/bangkit.kharismaraja" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/bangkit_kr/" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/BangkitKR" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="https://github.com/bangkitkr" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </aside>
     </main>
     <footer>
         <div class="content">
             <div class="sosmed">
-                <a href="https://www.facebook.com/bangkit.kharismaraja" target="_blank">
+                <a href="https://www.facebook.com/" target="_blank">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
-                <a href="https://www.instagram.com/bangkit_kr/" target="_blank">
+                <a href="https://www.instagram.com/" target="_blank">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
-                <a href="https://twitter.com/BangkitKR" target="_blank">
+                <a href="https://twitter.com/" target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
@@ -240,12 +354,17 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
             </div>
-            <nav class="nav-lists">
-                <li><a href="#home">Home</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">Contacts</a></li>
-            </nav>
+            <ul class="time-open">
+                <li>
+                    <p>Senin-Jumat : <span>09:00-20:00 WIB</span></p>
+                </li>
+                <li>
+                    <div class="line"></div>
+                </li>
+                <li>
+                    <p>Sabtu-Minggu : <span>10:00-18:00 WIB</span></p>
+                </li>
+            </ul>
         </div>
         <div class="copy-r">
             <p>Created By <span>Bangkit_KR | Copyright &copy; 2024</span></p>
@@ -254,7 +373,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Vanilla JS -->
-    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/main.js"></script>
 </body>
 
 </html>
