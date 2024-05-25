@@ -200,13 +200,16 @@ header .nav-extras .menu-btn {
   text-align: center;
 }
 .hero .container span {
-  color: var(--brown-1);
+  color: var(--black-3);
+  text-stroke: 2px var(--brown-1);
+  -webkit-text-stroke: 2px var(--brown-1);
 }
 .hero .container p {
   font-size: 1.8rem;
   font-weight: 400;
   text-align: center;
   line-height: 1.4;
+  text-shadow: 3px 3px 5px var(--black-3);
 }
 .hero .container .cta {
   display: inline-block;
@@ -518,8 +521,9 @@ header .nav-extras .menu-btn {
 }
 .profiles .heading p {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 400;
+  letter-spacing: 0.1rem;
 }
 .profiles .bio-box {
   display: flex;
@@ -717,11 +721,7 @@ footer .copy-r span {
   }
 }
 /* Tablet */
-@media (max-width: 870px) {
-  html {
-    font-size: 85.5%;
-  }
-  /* ===== Header Responsive ===== */
+@media (max-width: 990px) {
   header .nav-lists {
     display: flex;
     position: absolute;
@@ -767,6 +767,13 @@ footer .copy-r span {
   header .nav-extras .login {
     display: none;
   }
+}
+@media (max-width: 870px) {
+  html {
+    font-size: 85.5%;
+  }
+  /* ===== Header Responsive ===== */
+
   /* Our Service Responsive */
   .about-us .container {
     flex-flow: wrap;

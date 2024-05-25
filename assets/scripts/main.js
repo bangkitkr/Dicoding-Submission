@@ -4,18 +4,18 @@ const navLinks = document.querySelectorAll("header .nav-lists li a");
 const menuBtn = document.querySelector(".nav-extras .menu-btn");
 const articleSections = document.querySelectorAll(".article[id]");
 
+// Scroll Event
 window.addEventListener("scroll", () => {
-  // Sticky Header
+  // Memberi Class Sticky pada Header Ketika di scroll
   header.classList.toggle("sticky", window.scrollY > 0);
 
-  // Nav Links Active
+  // Menentukan dan menyocokan Class Active pada Nav-Lists berdasarkan ID Atributte Content
   articleSections.forEach((current) => {
     if (window.scrollY >= current.offsetTop - 80) {
       currentArticle = current.id;
     }
   });
-  // console.log(currentArticle);
-
+  // Memberi Class Active pada Nav-lists Ketika di Scroll
   navLinks.forEach((current) => {
     if (current.href.includes(currentArticle)) {
       document.querySelector(".active").classList.remove("active");
@@ -23,10 +23,19 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+// Memberi Class Active pada menu btn dan Class Open pada nav-lists
 menuBtn.onclick = () => {
   menuBtn.classList.toggle("active");
   navbar.classList.toggle("open");
 };
+// Menghapus Class Active pada menu btn dan Class Open pada nav-list ketika klik di luar box navbar
+document.addEventListener("click", function (idx) {
+  if (!menuBtn.contains(idx.target) && !navbar.contains(idx.target)) {
+    navbar.classList.remove("open");
+    menuBtn.classList.remove("active");
+  }
+});
+
 // Config Swiper JS
 var swiper = new Swiper(".menu-slider", {
   slidesPerView: 1,
