@@ -188,7 +188,7 @@ header .nav-extras .menu-btn {
 }
 .hero .container {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   padding: 1.4rem 7%;
@@ -280,14 +280,15 @@ header .nav-extras .menu-btn {
   justify-content: center;
   align-items: stretch;
   flex-flow: row wrap;
-  gap: 2rem;
+  gap: 1rem;
 }
+
 .our-services .card-rows .card {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1 1 300px;
-  gap: 2rem;
+  gap: 1rem;
   padding: 2rem;
   background: var(--brown-3);
   min-height: 150px;
@@ -318,7 +319,7 @@ header .nav-extras .menu-btn {
 #shops {
   background: var(--black-3);
   padding: 2rem;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .shops .heading {
   text-align: center;
@@ -383,6 +384,10 @@ header .nav-extras .menu-btn {
   align-items: center;
   justify-content: space-between;
   margin: 1rem 0 0;
+}
+.menu-product .menu-slider .card-rows .card .checkout-box .price {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .menu-product .menu-slider .card-rows .card .checkout-box button {
   display: flex;
@@ -608,7 +613,7 @@ header .nav-extras .menu-btn {
 }
 /* ===== Profiles Section End ===== */
 
-/* ===== Footer Section ===== */
+/* ===== footer Section ===== */
 footer {
   background: var(--brown-3);
 }
@@ -616,13 +621,13 @@ footer .content {
   width: 100%;
   padding: 70px 30px 20px;
 }
-footer .sosmed {
+footer .content .sosmed {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-footer .sosmed a {
+footer .content .sosmed a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -631,20 +636,19 @@ footer .sosmed a {
   border-radius: 50%;
   background: var(--white-1);
 }
-footer .sosmed a i {
+footer .content .sosmed a i {
   font-size: 2rem;
   color: var(--black-2);
   opacity: 0.9;
 }
-footer .sosmed a:nth-child(1):hover,
-footer .sosmed a:nth-child(1):hover i {
+footer .content .sosmed a:nth-child(1):hover,
+footer .content .sosmed a:nth-child(1):hover i {
   color: #fff;
   background: rgba(24, 119, 242, 1);
   transition: all 0.3s ease-out;
-  filter: blur();
 }
-footer .sosmed a:nth-child(2):hover,
-footer .sosmed a:nth-child(2):hover i {
+footer .content .sosmed a:nth-child(2):hover,
+footer .content .sosmed a:nth-child(2):hover i {
   color: #fff;
   background: linear-gradient(
     45deg,
@@ -655,49 +659,57 @@ footer .sosmed a:nth-child(2):hover i {
     #bc1888 100%
   );
   transition: all 0.3s ease-out;
-  filter: blur();
 }
-footer .sosmed a:nth-child(3):hover,
-footer .sosmed a:nth-child(3):hover i {
+footer .content .sosmed a:nth-child(3):hover,
+footer .content .sosmed a:nth-child(3):hover i {
   color: #fff;
   background: rgba(20, 23, 26, 1);
   transition: all 0.3s ease-out;
-  filter: blur();
 }
-footer .sosmed a:nth-child(4):hover,
-footer .sosmed a:nth-child(4):hover i {
+footer .content .sosmed a:nth-child(4):hover,
+footer .content .sosmed a:nth-child(4):hover i {
   color: #fff;
   background: #333;
   transition: all 0.3s ease-out;
-  filter: blur();
 }
-footer .sosmed a:nth-child(5):hover,
-footer .sosmed a:nth-child(5):hover i {
+footer .content .sosmed a:nth-child(5):hover,
+footer .content .sosmed a:nth-child(5):hover i {
   color: #fff;
   background: rgba(255, 0, 0, 1);
   transition: all 0.3s ease-out;
-  filter: blur();
 }
-footer .time-open {
+footer .content .shops-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row;
+  flex-flow: column;
   gap: 1rem;
   margin: 30px 0 20px;
-  text-decoration: none;
 }
-footer .time-open p {
-  font-size: 1.1rem;
+footer .content .shops-open h1 {
+  font-size: 1.2rem;
   font-weight: 400;
+}
+footer .content .shops-open ul {
+  display: flex;
+  gap: 1rem;
+}
+footer .content .shops-open ul li {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 300;
   text-shadow: 1px 1px 5px var(--white-2);
 }
-footer .time-open .line {
+footer .content .shops-open .pipeline {
   content: "";
   width: 1px;
-  height: 30px;
+  height: 50px;
   background: var(--white-1);
 }
+footer .content .shops-open ul li span {
+  text-shadow: 1px 1px 5px var(--white-2);
+}
+
 footer .copy-r {
   background: var(--brown-4);
   padding: 20px;
@@ -720,12 +732,13 @@ footer .copy-r span {
     font-size: 90%;
   }
 }
-/* Tablet */
-@media (max-width: 990px) {
+
+@media (max-width: 1004px) {
+  /* ===== Header Responsive ===== */
   header .nav-lists {
     display: flex;
     position: absolute;
-    flex-direction: column;
+    flex-flow: column;
     gap: 0.1rem;
     top: 7rem;
     right: 3rem;
@@ -767,13 +780,20 @@ footer .copy-r span {
   header .nav-extras .login {
     display: none;
   }
+  /* ===== Our Servcies Responsive ===== */
+  .our-services .card-rows .card .icon-box {
+    flex: 1 1 20%;
+  }
+  .our-services .card-rows .card .content-box {
+    flex: 1 1 80%;
+  }
 }
+
+/* Tablet */
 @media (max-width: 870px) {
   html {
     font-size: 85.5%;
   }
-  /* ===== Header Responsive ===== */
-
   /* Our Service Responsive */
   .about-us .container {
     flex-flow: wrap;
@@ -825,10 +845,6 @@ footer .copy-r span {
   }
   header .nav-lists.open {
     height: 270px;
-  }
-  /* ===== Our Servcies Responsive ===== */
-  .our-services .card-rows .card .content-box {
-    width: 50%;
   }
   /* ===== Products Responsive ===== */
   #shops {

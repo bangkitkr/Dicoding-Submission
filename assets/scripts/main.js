@@ -1,42 +1,78 @@
-const header = document.querySelector("header");
-const navbar = document.querySelector("header .nav-lists");
-const navLinks = document.querySelectorAll("header .nav-lists li a");
-const menuBtn = document.querySelector(".nav-extras .menu-btn");
-const articleSections = document.querySelectorAll(".article[id]");
+// Kelas yang menangani navigasi
+class NavigationHandler {
+  constructor() {
+    // Mendapatkan elemen-elemen yang diperlukan
+    this.header = document.querySelector("header");
+    this.articleSections = document.querySelectorAll(".article[id]");
+    this.navLinks = document.querySelectorAll("header .nav-lists li a");
+    this.menuBtn = document.querySelector(".nav-extras .menu-btn");
+    this.navbar = document.querySelector("header .nav-lists");
+    this.currentArticle = "";
 
-// Scroll Event
-window.addEventListener("scroll", () => {
-  // Memberi Class Sticky pada Header Ketika di scroll
-  header.classList.toggle("sticky", window.scrollY > 0);
-
-  // Menentukan dan menyocokan Class Active pada Nav-Lists berdasarkan ID Atributte Content
-  articleSections.forEach((current) => {
-    if (window.scrollY >= current.offsetTop - 80) {
-      currentArticle = current.id;
-    }
-  });
-  // Memberi Class Active pada Nav-lists Ketika di Scroll
-  navLinks.forEach((current) => {
-    if (current.href.includes(currentArticle)) {
-      document.querySelector(".active").classList.remove("active");
-      current.classList.add("active");
-    }
-  });
-});
-// Memberi Class Active pada menu btn dan Class Open pada nav-lists
-menuBtn.onclick = () => {
-  menuBtn.classList.toggle("active");
-  navbar.classList.toggle("open");
-};
-// Menghapus Class Active pada menu btn dan Class Open pada nav-list ketika klik di luar box navbar
-document.addEventListener("click", function (idx) {
-  if (!menuBtn.contains(idx.target) && !navbar.contains(idx.target)) {
-    navbar.classList.remove("open");
-    menuBtn.classList.remove("active");
+    // Inisialisasi event listeners
+    this.init();
   }
+
+  // Metode untuk menginisialisasi event listeners
+  init() {
+    window.addEventListener("scroll", () => this.onScroll());
+    this.menuBtn.onclick = () => this.toggleMenu();
+    document.addEventListener("click", (e) => this.onClickOutside(e));
+  }
+
+  // Metode yang dipanggil saat halaman di-scroll
+  onScroll() {
+    this.toggleStickyHeader(); // Menambahkan atau menghapus class sticky pada header
+    this.updateActiveNavLink(); // Mengupdate nav-link yang aktif berdasarkan posisi artikel
+  }
+
+  // Menambahkan atau menghapus class sticky pada header
+  toggleStickyHeader() {
+    this.header.classList.toggle("sticky", window.scrollY > 0);
+  }
+
+  // Mengupdate nav-link yang aktif berdasarkan posisi artikel
+  updateActiveNavLink() {
+    // Memeriksa posisi setiap artikel dan menetapkan artikel saat ini
+    this.articleSections.forEach((current) => {
+      if (window.scrollY >= current.offsetTop - 80) {
+        this.currentArticle = current.id;
+      }
+    });
+
+    // Mengupdate class active pada nav-link yang sesuai dengan artikel saat ini
+    this.navLinks.forEach((current) => {
+      if (current.href.includes(this.currentArticle)) {
+        document.querySelector(".active").classList.remove("active");
+        current.classList.add("active");
+      }
+    });
+  }
+
+  // Menangani klik pada tombol menu untuk membuka/menutup navbar
+  toggleMenu() {
+    this.menuBtn.classList.toggle("active");
+    this.navbar.classList.toggle("open");
+  }
+
+  // Menangani klik di luar navbar untuk menutup navbar dan menghapus class active pada tombol menu
+  onClickOutside(event) {
+    if (
+      !this.menuBtn.contains(event.target) &&
+      !this.navbar.contains(event.target)
+    ) {
+      this.navbar.classList.remove("open");
+      this.menuBtn.classList.remove("active");
+    }
+  }
+}
+
+// Membuat instance dari NavigationHandler saat dokumen siap
+document.addEventListener("DOMContentLoaded", () => {
+  new NavigationHandler();
 });
 
-// Config Swiper JS
+// Konfigurasi Swiper JS
 var swiper = new Swiper(".menu-slider", {
   slidesPerView: 1,
   spaceBetween: 30,
