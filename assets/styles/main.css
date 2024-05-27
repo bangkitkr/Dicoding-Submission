@@ -201,7 +201,7 @@ header .nav-extras .menu-btn {
 }
 .hero .container span {
   color: var(--black-3);
-  text-stroke: 2px var(--brown-1);
+  /* text-stroke: 2px var(--brown-1); */
   -webkit-text-stroke: 2px var(--brown-1);
 }
 .hero .container p {
